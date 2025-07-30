@@ -168,3 +168,4 @@ DJMotorInfo_t* MagazinedjMotor_Pointer(void)
 {
     return &cover_djmotor;
 }
+

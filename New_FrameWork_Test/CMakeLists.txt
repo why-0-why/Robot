@@ -38,30 +38,8 @@ enable_language(C ASM)
 
 # Create an executable object type
 add_executable(${CMAKE_PROJECT_NAME}
-        USER/TASK/TestTask.c
-        USER/Component/Driver/drv_can.c
-        USER/Component/Algorithm/alg_pid.cpp
-        USER/Component/Algorithm/drv_math.cpp
-        USER/TASK/TestTask.h
-        USER/Module/motor.c
-        USER/Module/motor.h
-        USER/Component/Algorithm/alg_pid_capi.cpp
-        USER/Component/Driver/drv_uart.c
-        USER/Component/Driver/drv_uart.h
-        USER/Device/dvc_dt7.c
-        USER/Device/dvc_dt7.h
-        USER/Component/Driver/drv_def.h
-        USER/Component/Driver/fifo.c
-        USER/Component/Driver/fifo.h
-        USER/Component/Driver/drv_gpio.c
-        USER/Component/Driver/drv_gpio.h
-        USER/Component/Driver/drv_timer.c
-        USER/Component/Driver/drv_timer.h
-        USER/Device/dvc_DJmotor.c
-        USER/Device/dvc_DJmotor.h
-        USER/Device/dvc_DMmotor.c
-        USER/Device/dvc_DMmotor.h
-        USER/Component/Algorithm/arm_math.h
+
+
 )
 
 # Add STM32CubeMX generated sources
@@ -75,6 +53,22 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
+        USER/TASK/TestTask.c
+        USER/Component/Driver/drv_can.c
+        USER/Component/Algorithm/alg_pid.cpp
+        USER/Component/Algorithm/drv_math.cpp
+        USER/Module/motor.c
+        USER/Component/Algorithm/alg_pid_capi.cpp
+        USER/Component/Driver/drv_uart.c
+        USER/Device/dvc_dt7.c
+        USER/Device/dvc_gpio.c
+        USER/Component/Driver/fifo.c
+        USER/Component/Driver/drv_gpio.c
+        USER/Component/Driver/drv_timer.c
+        USER/Device/dvc_DJmotor.c
+        USER/Device/dvc_DMmotor.c
+        USER/Module/Chassis.c
+        USER/Module/Gimbal.c
 )
 
 # Add include paths
@@ -84,6 +78,7 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
         USER/Device
         USER/Component/Driver
         USER/Task
+        USER/Module
 )
 
 # Add project symbols (macros)
