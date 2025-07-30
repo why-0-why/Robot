@@ -1,7 +1,7 @@
-#ifndef TESTTASK_H
-#define TESTTASK_H
+#ifndef STARTTASK_H
+#define STARTTASK_H
 
-#endif //TESTTASK_H
+#endif //STARTTASK_H
 
 #include "main.h"
 #include "cmsis_os.h"
