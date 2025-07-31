@@ -26,6 +26,8 @@ set(MX_Application_Src
     ${CMAKE_SOURCE_DIR}/Src/gpio.c
     ${CMAKE_SOURCE_DIR}/Src/freertos.c
     ${CMAKE_SOURCE_DIR}/Src/can.c
+    ${CMAKE_SOURCE_DIR}/Src/i2c.c
+    ${CMAKE_SOURCE_DIR}/Src/spi.c
     ${CMAKE_SOURCE_DIR}/Src/tim.c
     ${CMAKE_SOURCE_DIR}/Src/usart.c
     ${CMAKE_SOURCE_DIR}/Src/stm32f4xx_it.c
@@ -52,6 +54,9 @@ set(STM32_Drivers_Src
     ${CMAKE_SOURCE_DIR}/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
     ${CMAKE_SOURCE_DIR}/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
     ${CMAKE_SOURCE_DIR}/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c
+    ${CMAKE_SOURCE_DIR}/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c
+    ${CMAKE_SOURCE_DIR}/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c
+    ${CMAKE_SOURCE_DIR}/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c
     ${CMAKE_SOURCE_DIR}/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c
     ${CMAKE_SOURCE_DIR}/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c
     ${CMAKE_SOURCE_DIR}/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c
@@ -80,8 +85,7 @@ set(MX_LINK_DIRS
 # Project static libraries
 set(MX_LINK_LIBS 
     STM32_Drivers
-    FreeRTOS
-	
+    FreeRTOS	
 )
 # Interface library for includes and symbols
 add_library(stm32cubemx INTERFACE)

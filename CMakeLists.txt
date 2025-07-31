@@ -41,8 +41,6 @@ add_executable(${CMAKE_PROJECT_NAME}
 
 
 
-
-
 )
 
 # Add STM32CubeMX generated sources
@@ -51,6 +49,7 @@ add_subdirectory(cmake/stm32cubemx)
 # Link directories setup
 target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined library search paths
+        USER/Component/Algorithm
 )
 
 # Add sources to executable
@@ -59,6 +58,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
         USER/Component/Algorithm/alg_pid.cpp
         USER/Component/Algorithm/drv_math.cpp
         USER/Component/Algorithm/alg_pid_capi.cpp
+        USER/Component/Algorithm/alg_AHRS.c
 
         USER/Component/Driver/drv_uart.c
         USER/Component/Driver/drv_can.c
@@ -71,10 +71,13 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
         USER/Device/Dvc_dt7.c
         USER/Device/Dvc_gpio.c
         USER/Device/dvc_soft_timer.c
+        USER/Device/dvc_BMI088.c
+        USER/Device/dvc_IST8310.c
 
         USER/Module/mdl_Chassis.c
         USER/Module/mdl_Gimbal.c
         USER/Module/motor.c
+        USER/Module/mdl_IMU.c
 
         USER/Task/task_Shoot.c
         USER/Task/task_Communicate.c
@@ -82,6 +85,10 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
         USER/Task/task_SoftwareTimer_Check.c
         USER/Task/task_Detect.c
         USER/Task/task_IMU_Update.c
+
+
+
+
 )
 
 # Add include paths

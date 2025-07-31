@@ -2,7 +2,7 @@
 // Created by Administrator on 25-7-29.
 //
 #include "dvc_dt7.h"
-#include "stdlib.h"
+
 
 #define DBUS_RX_BUFFER_SIZE (30)
 
