@@ -1,11 +1,11 @@
-#ifndef STARTTASK_H
-#define STARTTASK_H
-
-#endif //STARTTASK_H
+#ifndef TASK_START_H
+#define TASK_START_H
 
 #include "main.h"
 #include "cmsis_os.h"
-
-//user头文件
 #include "../Module/Motor.h"
 #include "dvc_dt7.h"
+
+#define START_TASK_PERIOD           100
+
+#endif //TASK_START_H

@@ -1,0 +1,9 @@
+#ifndef TASK_GIMBAL_CTRL_H
+#define TASK_GIMBAL_CTRL_H
+
+
+#define GIMBAL_CTRL_TASK_PERIOD          1
+#define GIMBAL_UPLOAD_TIMER_PERIOD  20
+
+
+#endif //TASK_GIMBAL_CTRL_H

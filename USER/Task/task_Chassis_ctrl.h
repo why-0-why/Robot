@@ -1,0 +1,6 @@
+#ifndef TASK_CHASSIS_H
+#define TASK_CHASSIS_H
+
+#define CHASSIS_CTRL_TASK_PERIOD         10
+
+#endif //TASK_CHASSIS_H

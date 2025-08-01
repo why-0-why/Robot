@@ -1,11 +1,11 @@
 /**
-* @file alg_pid_capi.cpp
+* @file alg_pid_zkd_capi.cpp
  * @author as17asj
  * @brief pid对象的C语言接口
  * @date 2025-07-25
  *
  */
-#include "alg_pid.h"
+#include "alg_pid_zkd.h"
 
 // 初始化 PID 控制器
 void PID_Init(Class_PID *pid,

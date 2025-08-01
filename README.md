@@ -63,7 +63,6 @@ extern "C" {
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
         # Add user sources here
-        User/Drive/drv_math.cpp
         User/Algorithm/alg_pid.cpp
         User/Drive/drv_uart.c
         User/Drive/drv_can.c

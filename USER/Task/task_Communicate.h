@@ -1,8 +1,7 @@
-//
-// Created by Administrator on 25-7-30.
-//
 
 #ifndef TASK_COMMUNICATE_H
 #define TASK_COMMUNICATE_H
+
+#define COMMUNICATE_TASK_PERIOD            1
 
 #endif //TASK_COMMUNICATE_H

@@ -1,5 +1,5 @@
 /**
- * @file alg_pid.cpp
+ * @file alg_pid_zkd.cpp
  * @author yssickjgd 1345578933@qq.com
  * @brief PID算法
  * @version 0.1
@@ -11,7 +11,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 
-#include "alg_pid.h"
+#include "alg_pid_zkd.h"
 
 /* Private macros ------------------------------------------------------------*/
 

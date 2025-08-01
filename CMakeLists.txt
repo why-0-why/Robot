@@ -55,10 +55,11 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
-        USER/Component/Algorithm/alg_pid.cpp
+        USER/Component/Algorithm/alg_pid_zkd.cpp
         USER/Component/Algorithm/drv_math.cpp
-        USER/Component/Algorithm/alg_pid_capi.cpp
+        USER/Component/Algorithm/alg_pid_zkd_capi.cpp
         USER/Component/Algorithm/alg_AHRS.c
+        USER/Component/Algorithm/alg_pid.c
 
         USER/Component/Driver/drv_uart.c
         USER/Component/Driver/drv_can.c
@@ -85,8 +86,9 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
         USER/Task/task_SoftwareTimer_Check.c
         USER/Task/task_Detect.c
         USER/Task/task_IMU_Update.c
-
-
+        USER/Task/task_Console.c
+        USER/Task/task_Chassis_ctrl.c
+        USER/Task/task_Gimbal_ctrl.c
 
 
 )

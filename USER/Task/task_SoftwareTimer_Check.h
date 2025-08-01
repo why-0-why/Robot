@@ -1,7 +1,3 @@
-//
-// Created by Administrator on 25-7-30.
-//
-
 #ifndef TASK_SOFTWARETIMER_H
 #define TASK_SOFTWARETIMER_H
 
