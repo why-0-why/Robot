@@ -2,7 +2,7 @@
 #include "task_IMU_Update.h"
 #include "cmsis_os.h"
 #include "mdl_IMU.h"
-#include "dvc_gpio.h"
+#include "dvc_heater.h"
 #include "alg_pid.h"
 
 /* 私有类型定义 --------------------------------------------------------------*/

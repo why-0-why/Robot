@@ -1,6 +1,4 @@
-//
-// Created by Administrator on 25-7-29.
-//
+
 #include "dvc_dt7.h"
 
 
@@ -39,10 +37,10 @@ void RC_DataParser(RC_Info_t *rc, uint8_t *buf, uint16_t len)
     rc->sw1 = ((buf[5] >> 4) & 0x000C) >> 2;
     rc->sw2 = (buf[5] >> 4) & 0x0003;
 
-    if ((abs(rc->ch1) > 660) || \
-            (abs(rc->ch2) > 660) || \
-            (abs(rc->ch3) > 660) || \
-            (abs(rc->ch4) > 660))
+    if ((fabs(rc->ch1) > 660) || \
+            (fabs(rc->ch2) > 660) || \
+            (fabs(rc->ch3) > 660) || \
+            (fabs(rc->ch4) > 660))
     {
         memset(rc, 0, sizeof(RC_Info_t));
         return ;

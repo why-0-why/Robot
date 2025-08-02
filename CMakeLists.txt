@@ -39,8 +39,6 @@ enable_language(C ASM)
 # Create an executable object type
 add_executable(${CMAKE_PROJECT_NAME}
 
-
-
 )
 
 # Add STM32CubeMX generated sources
@@ -66,11 +64,16 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
         USER/Component/Driver/fifo.c
         USER/Component/Driver/drv_gpio.c
         USER/Component/Driver/drv_timer.c
+        USER/Component/Driver/drv_i2c.c
 
+        USER/Device/dvc_led.c
+        USER/Device/dvc_buzzer.c
+        USER/Device/dvc_laser.c
+        USER/Device/dvc_app_gpio.c
         USER/Device/dvc_DJmotor.c
         USER/Device/dvc_DMmotor.c
         USER/Device/Dvc_dt7.c
-        USER/Device/Dvc_gpio.c
+        USER/Device/dvc_heater.c
         USER/Device/dvc_soft_timer.c
         USER/Device/dvc_BMI088.c
         USER/Device/dvc_IST8310.c
