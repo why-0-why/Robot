@@ -38,6 +38,8 @@ enable_language(C ASM)
 
 # Create an executable object type
 add_executable(${CMAKE_PROJECT_NAME}
+        USER/Component/Algorithm/alg_ramp.c
+        USER/Component/Algorithm/alg_ramp.h
 
 )
 

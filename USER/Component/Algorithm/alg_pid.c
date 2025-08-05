@@ -23,17 +23,16 @@ static void abs_limit(float *a, float ABS_MAX)
 
 static void pid_param_init(
     pid_t*   pid,
-    int   mode,
-    float maxout,
-    float intergral_limit,
+    int      mode,
+    float    maxout,
+    float    intergral_limit,
     float    kp,
     float    ki,
     float    kd)
 {
-
-    pid->integral_limit = intergral_limit;
-    pid->max_out        = maxout;
     pid->pid_mode       = mode;
+    pid->max_out        = maxout;
+    pid->integral_limit = intergral_limit;
 
     pid->p = kp;
     pid->i = ki;
@@ -41,11 +40,13 @@ static void pid_param_init(
 
 }
 /**
-  * @brief     modify pid parameter when code running
-  * @param[in] pid: control pid struct
-  * @param[in] p/i/d: pid parameter
-  * @retval    none
-  */
+ * @brief  在线修改 PID 参数
+ * @param[in] pid  PID 结构体指针
+ * @param[in] kp   比例系数
+ * @param[in] ki   积分系数
+ * @param[in] kd   微分系数
+ * @retval 无
+ */
 static void pid_reset(pid_t *pid, float kp, float ki, float kd)
 {
     pid->p = kp;
@@ -56,15 +57,14 @@ static void pid_reset(pid_t *pid, float kp, float ki, float kd)
     pid->iout = 0;
     pid->dout = 0;
     pid->out  = 0;
-
 }
 
 /**
-  * @brief     calculate delta PID and position PID
-  * @param[in] pid: control pid struct
-  * @param[in] get: measure feedback value
-  * @param[in] set: target value
-  * @retval    pid calculate output
+  * @brief     计算增量式PID和位置式PID
+  * @param[in] pid: PID控制器结构体指针
+  * @param[in] get: 当前测量反馈值
+  * @param[in] set: 目标设定值
+  * @retval    PID计算输出值
   */
 float pid_calc(pid_t *pid, float get, float set)
 {
@@ -106,8 +106,8 @@ float pid_calc(pid_t *pid, float get, float set)
 }
 
 /**
-  * @brief     clear pid out
-  * @retval    none
+  * @brief     复位PID控制器
+  * @retval    无
   */
 void pid_clear(pid_t *pid)
 {
@@ -122,12 +122,12 @@ void pid_clear(pid_t *pid)
 }
 
 /**
-  * @brief     initialize pid parameter
+  * @brief     初始化PID所有参数
   * @retval    none
   */
 void pid_init(
     pid_t*   pid,
-    int mode,
+    int   mode,
     float maxout,
     float intergral_limit,
 
@@ -139,6 +139,14 @@ void pid_init(
     pid_reset(pid, kp, ki, kd);
 }
 
+/**
+  * @brief     双环PID计算函数
+  * @param[in] dpid      : 双环PID结构体指针
+  * @param[in] outer_ref : 外环（位置/角度等）目标值
+  * @param[in] outer_fdb : 外环（位置/角度等）反馈值
+  * @param[in] inter_fdb : 内环（速度/电流等）反馈值
+  * @retval    最终输出值（内环PID输出）
+  */
 float DoublePID_Calc(Double_PID_t* dpid, float outer_ref, float outer_fdb, float inter_fdb)
 {
     dpid->outer_ref = outer_ref;
