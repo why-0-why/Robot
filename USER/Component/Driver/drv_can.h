@@ -36,13 +36,17 @@ typedef struct
 #define CAN_TX_FIFO_SIZE (CAN_TX_FIFO_UNIT_NUM * sizeof(CAN_TxMsg_t))
 
 /* 扩展变量 ------------------------------------------------------------------*/
-
+/* CAN对象结构 */
+extern CAN_Object_t can1_obj;
+extern CAN_Object_t can2_obj;
 /* 函数声明 ------------------------------------------------------------------*/
 void BSP_CAN_Init(CAN_HandleTypeDef* hcan, uint32_t active_it);
 BSP_Status_e BSP_CAN_NewObject(CAN_Object_t* obj, CAN_HandleTypeDef* hcan, uint8_t* tx_fifo_buff, BSP_CAN_RxCallback_t fun);
 BSP_Status_e BSP_CAN_SetRxCallback(CAN_Object_t* obj, BSP_CAN_RxCallback_t fun);
 BSP_Status_e BSP_CAN_WriteData(CAN_HandleTypeDef* hcan, uint32_t std_id, uint8_t* data, uint16_t len);
 BSP_Status_e BSP_CAN_TransmitData(CAN_Object_t* obj, uint32_t std_id, uint8_t* data, uint16_t len);
+
+void BSP_Init(void);
 
 #endif  // DRV_CAN_H
 

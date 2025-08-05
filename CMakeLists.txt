@@ -38,8 +38,7 @@ enable_language(C ASM)
 
 # Create an executable object type
 add_executable(${CMAKE_PROJECT_NAME}
-        USER/Component/Algorithm/alg_ramp.c
-        USER/Component/Algorithm/alg_ramp.h
+
 
 )
 
@@ -60,6 +59,8 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
         USER/Component/Algorithm/alg_pid_zkd_capi.cpp
         USER/Component/Algorithm/alg_AHRS.c
         USER/Component/Algorithm/alg_pid.c
+        USER/Component/Algorithm/alg_ADRC.c
+        USER/Component/Algorithm/alg_ramp.c
 
         USER/Component/Driver/drv_uart.c
         USER/Component/Driver/drv_can.c
@@ -79,6 +80,8 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
         USER/Device/dvc_soft_timer.c
         USER/Device/dvc_BMI088.c
         USER/Device/dvc_IST8310.c
+        USER/Device/dvc_referee_system.c
+        USER/Device/dvc_Supercapacity.c
 
         USER/Module/mdl_Chassis.c
         USER/Module/mdl_Gimbal.c

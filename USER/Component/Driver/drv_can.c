@@ -392,5 +392,18 @@ void HAL_CAN_RxFifo1MsgPendingCallback(CAN_HandleTypeDef* hcan)
     }
 }
 
+/*-----------------------------------------can初始化------------------------------------------------*/
 
+uint8_t can1_tx_fifo_buff[CAN_TX_FIFO_SIZE];
+uint8_t can2_tx_fifo_buff[CAN_TX_FIFO_SIZE];
 
+/* CAN对象结构 */
+CAN_Object_t can1_obj;
+CAN_Object_t can2_obj;
+
+void CAN_Init(void) {
+
+    BSP_CAN_NewObject(&can1_obj, &hcan1, can1_tx_fifo_buff, NULL);
+    BSP_CAN_NewObject(&can2_obj, &hcan2, can2_tx_fifo_buff, NULL);
+
+}
