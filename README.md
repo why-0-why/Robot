@@ -83,3 +83,7 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # 未知TODO
 
 7处，why存文件传输助手
+
+
+
+2025/08/07 省略其他模式（键盘和遥控器保留），省略底盘的island模式，超电限制函数忽略,函数去掉关键字static,修改云台PID为普通的双环PID（结构体）

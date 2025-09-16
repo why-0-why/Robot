@@ -120,3 +120,23 @@ MotorInfo_t* MagazineMotor_Pointer(void)
     return &cover_motor;
 }
 
+int16_t Motor_RelativePosition(int16_t ecd, int16_t center_offset)
+{
+    int16_t tmp = 0;
+    if (center_offset >= MOTOR_ENCODER_RANGE_HALF)
+    {
+        if (ecd > center_offset - MOTOR_ENCODER_RANGE_HALF)
+            tmp = ecd - center_offset;
+        else
+            tmp = ecd + MOTOR_ENCODER_RANGE - center_offset;
+    }
+    else
+    {
+        if (ecd > center_offset + MOTOR_ENCODER_RANGE_HALF)
+            tmp = ecd - MOTOR_ENCODER_RANGE - center_offset;
+        else
+            tmp = ecd - center_offset;
+    }
+    return tmp;
+}
+

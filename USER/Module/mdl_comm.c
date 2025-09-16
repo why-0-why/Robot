@@ -1,6 +1,6 @@
 /* 包含头文件 ----------------------------------------------------------------*/
 #include "mdl_comm.h"
-#include "alg_crc.h"
+
 
 /* 私有类型定义 --------------------------------------------------------------*/
 
@@ -9,6 +9,11 @@
 /* 私有变量 ------------------------------------------------------------------*/
 static LIST_HEAD(receive_head);  //定义并初始化链表头为receive_head，空的链表
 static LIST_HEAD(transmit_head);
+
+Comm_GimbalInfo_t gimbal_info;
+Comm_VisionInfo_t vision_info;
+Comm_RobotInfo_t robot_info;
+
 /* 扩展变量 ------------------------------------------------------------------*/
 
 /* 私有函数原形 --------------------------------------------------------------*/
@@ -275,5 +280,52 @@ void Comm_TransmitDataHandler(void)
     }
 }
 
+void Comm_board_ParseHandler(uint16_t cmd_id, uint8_t *data, uint16_t len)
+{
+    switch(cmd_id)
+    {
+        case RC_DATA_CMD_ID:
+        {
+            RC_DataParser(RC_GetDataPointer(), data, len);
+            OfflineHandle_TimeUpdate(OFFLINE_DBUS);
+        }break;
 
+        case CHASSIS_INFO_CMD_ID:
+        {
+            memcpy(&chassis_info,  data, sizeof(Comm_ChassisInfo_t));
+            OfflineHandle_TimeUpdate(OFFLINE_CHASSIS_INFO);
+        }break;
 
+        case CAP_INFO_CMD_ID:
+        {
+            CAP_PowerParser(ZFCAP_GetDataPointer(), data, len);
+            OfflineHandle_TimeUpdate(OFFLINE_CAP_INFO);
+        }break;
+        case LONG_CAP_INFO_CMD_ID:
+        {
+            LONG_CAP_PowerParser(CAP_GetDataPointer(), data, len);
+            OfflineHandle_TimeUpdate(OFFLINE_LONG_CAP_INFO);
+        }break;
+
+        case GIMBAL_INFO_CMD_ID:
+        {
+            memcpy(&gimbal_info,  data, sizeof(Comm_GimbalInfo_t));
+            OfflineHandle_TimeUpdate(OFFLINE_GIMBAL_INFO);
+        }break;
+    }
+}
+
+Comm_GimbalInfo_t* GimbalInfo_Pointer(void)
+{
+    return &gimbal_info;
+}
+
+Comm_VisionInfo_t* VisionInfo_Pointer(void)
+{
+    return &vision_info;
+}
+
+Comm_RobotInfo_t* RobotInfo_Pointer(void)
+{
+    return &robot_info;
+}

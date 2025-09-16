@@ -344,3 +344,35 @@ void BSP_UART_IDLE_Callback(UART_HandleTypeDef* huart)
     }
     __HAL_UART_CLEAR_IDLEFLAG(huart);
 }
+
+/*-----------------------------------------can初始化------------------------------------------------*/
+#define COM1_TX_BUFFER_SIZE (512)
+#define COM1_TX_FIFO_SIZE   (1024)
+#define COM1_RX_BUFFER_SIZE (512)
+
+#define COM2_TX_BUFFER_SIZE (512)
+#define COM2_TX_FIFO_SIZE   (1024)
+#define COM2_RX_BUFFER_SIZE (11)   //红外11，512
+
+uint8_t com1_tx_buffer[COM1_TX_BUFFER_SIZE];
+uint8_t com1_tx_fifo_buffer[COM1_TX_FIFO_SIZE];
+uint8_t com1_rx_buffer[COM1_RX_BUFFER_SIZE];
+
+uint8_t com2_tx_buffer[COM2_TX_BUFFER_SIZE];
+uint8_t com2_tx_fifo_buffer[COM2_TX_FIFO_SIZE];
+uint8_t com2_rx_buffer[COM2_RX_BUFFER_SIZE];
+
+/* 串口对象结构 */
+UART_Object_t com1_obj;  //这里名字使用板子上丝印
+UART_Object_t com2_obj;
+
+void COM_Init(void) {
+
+    BSP_UART_NewObject(&com1_obj, &huart6);
+    BSP_UART_TransmitConfig(&com1_obj, com1_tx_buffer, COM1_TX_BUFFER_SIZE, com1_tx_fifo_buffer, COM1_TX_FIFO_SIZE);
+    BSP_UART_ReceiveConfig(&com1_obj, com1_rx_buffer, COM1_RX_BUFFER_SIZE, NULL);
+    BSP_UART_NewObject(&com2_obj, &huart1);
+    BSP_UART_TransmitConfig(&com2_obj, com2_tx_buffer, COM2_TX_BUFFER_SIZE, com2_tx_fifo_buffer, COM2_TX_FIFO_SIZE);
+    BSP_UART_ReceiveConfig(&com2_obj, com2_rx_buffer, COM2_RX_BUFFER_SIZE, NULL);
+
+}
