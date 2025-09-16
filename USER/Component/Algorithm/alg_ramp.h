@@ -49,4 +49,5 @@ typedef struct ramp_v0_t
 
 void  ramp_v0_init(ramp_v0_t *ramp, int32_t scale);
 float ramp_v0_calculate(ramp_v0_t *ramp);
+float calculate_derivative(float current_value, float current_time);
 #endif //ALG_RAMP_H

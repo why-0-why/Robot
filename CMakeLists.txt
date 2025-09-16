@@ -38,8 +38,8 @@ enable_language(C ASM)
 
 # Create an executable object type
 add_executable(${CMAKE_PROJECT_NAME}
-
-
+        USER/Component/Algorithm/alg_ESO.c
+        USER/Component/Algorithm/alg_ESO.h
 
 )
 

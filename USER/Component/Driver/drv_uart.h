@@ -35,7 +35,9 @@ typedef struct
 /* 宏定义 --------------------------------------------------------------------*/
 
 /* 扩展变量 ------------------------------------------------------------------*/
-
+/* 串口对象结构 */
+extern UART_Object_t com1_obj;
+extern UART_Object_t com2_obj;
 /* 函数声明 ------------------------------------------------------------------*/
 BSP_Status_e BSP_UART_NewObject(UART_Object_t* obj, UART_HandleTypeDef *huart);
 BSP_Status_e BSP_UART_TransmitConfig(UART_Object_t* obj, uint8_t* tx_buffer, uint16_t tx_buffer_size, uint8_t* tx_fifo_buffer, uint16_t tx_fifo_size);
@@ -44,6 +46,7 @@ BSP_Status_e BSP_UART_SetRxCallback(UART_Object_t* obj, UART_RxCallback_t fun);
 BSP_Status_e BSP_UART_WriteData(UART_HandleTypeDef* huart, uint8_t* data, uint16_t len);
 BSP_Status_e BSP_UART_TransmitData(UART_Object_t* obj, uint8_t* data, uint16_t len);
 void BSP_UART_IDLE_Callback(UART_HandleTypeDef *huart);
+void COM_Init(void);
 
 #endif /* BSP_UART_H */
 

@@ -52,3 +52,26 @@ float ramp_v0_calculate(ramp_v0_t *ramp)
     return ramp->out;
 }
 
+float previous_value = 0.0f;
+float previous_time = 0.0f;
+
+// 计算当前值与之前值的导函数
+// 输入: 当前值和当前时间
+// 输出: 当前值的导数
+float calculate_derivative(float current_value, float current_time)
+{
+    // 计算时间间隔，转换为秒
+    float delta_time = (current_time - previous_time) / 1000.0f; // 转换为秒
+
+    // 计算导数，防止除以零
+    float derivative = 0.0f;
+    if (delta_time > 0) {
+        derivative = (current_value - previous_value) / delta_time;
+    }
+
+    // 更新之前的值和时间
+    previous_value = current_value;
+    previous_time = current_time;
+
+    return derivative;
+}

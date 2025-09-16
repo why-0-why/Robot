@@ -72,6 +72,8 @@ MotorInfo_t* FrictionWheelMotor_2_Pointer(void);
 MotorInfo_t* PluckMotor_Pointer(void);
 MotorInfo_t* MagazineMotor_Pointer(void);
 
+int16_t Motor_RelativePosition(int16_t ecd, int16_t center_offset);
+
 
 #endif  // MOTOR_H
 

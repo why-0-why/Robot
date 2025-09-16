@@ -5,7 +5,7 @@
 #ifndef DVC_DT7_H
 #define DVC_DT7_H
 
-#endif //DVC_DT7_H
+
 
 
 
@@ -124,3 +124,4 @@ RC_Info_t* RC_GetDataPointer(void);
 extern UART_Object_t dbus_obj;
 
 void Dt7_Init ();   //串口初始化函数
+#endif //DVC_DT7_H

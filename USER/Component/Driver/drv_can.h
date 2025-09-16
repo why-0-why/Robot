@@ -46,7 +46,7 @@ BSP_Status_e BSP_CAN_SetRxCallback(CAN_Object_t* obj, BSP_CAN_RxCallback_t fun);
 BSP_Status_e BSP_CAN_WriteData(CAN_HandleTypeDef* hcan, uint32_t std_id, uint8_t* data, uint16_t len);
 BSP_Status_e BSP_CAN_TransmitData(CAN_Object_t* obj, uint32_t std_id, uint8_t* data, uint16_t len);
 
-void BSP_Init(void);
+void CAN_Init(void);
 
 #endif  // DRV_CAN_H
 
