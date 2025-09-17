@@ -102,7 +102,7 @@ extern Comm_VisionInfo_t* VisionInfo_Pointer(void);
 extern Comm_RobotInfo_t* RobotInfo_Pointer(void);
 
 /*------------------------------------板间通讯-----------------------------*/
-
+    
 typedef enum
 {
     RC_DATA_CMD_ID           = 0x0001,
@@ -124,5 +124,51 @@ Comm_GimbalInfo_t* GimbalInfo_Pointer(void);
 
 extern Comm_ChassisInfo_t chassis_info;
 extern Comm_GimbalInfo_t gimbal_info;
+/*------------------------------------视觉通讯-----------------------------*/
+/* 类型定义 ------------------------------------------------------------------*/
+typedef enum
+{
+    VISION_DATA_CMD_ID          = 0x0001,
+    ROBOT_DATA_CMD_ID           = 0x0002,
+} VISION_CMD_ID_e;
+
+typedef enum
+{
+    VISION_TRACK_LOSS       = 0x0001,
+    VISION_TRACK            = 0x01,
+    VISION_TARGET_CHANGE    = 0x0003
+} VisionState_e;
+
+typedef enum
+{
+    Hero        = 0x0001,
+    Engineer    = 0x0002,
+    Infantry    = 0x0004,
+    Sentey      = 0x0008,
+    AllRobot    = Hero|Engineer|Infantry|Sentey,
+    Windmill    = 0x1000
+} DetectTarget_e;
+
+typedef enum
+{
+    Gray = 0,
+    Red = 1,
+    Blue = 2,
+    AllColor = Red|Blue
+} EnemyColor_e;
+
+
+/* 宏定义 --------------------------------------------------------------------*/
+#define VISION_PROTOCOL_HEADER_SOF     0x55
+#define VISION_DATA_FIFO_SIZE          (256u)
+/* 扩展变量 ------------------------------------------------------------------*/
+
+/* 函数声明 ------------------------------------------------------------------*/
+void VisionProtocol_ParseHandler(uint16_t cmd_id, uint8_t* data, uint16_t len);
+Comm_VisionInfo_t* VisionInfo_Pointer(void);
+Comm_RobotInfo_t* RobotInfo_Pointer(void);
+
+int TwoBytesToInt (uint8_t byte[2]);
+float FourBytesToFloat (uint8_t byte[4]);
 
 #endif /* MDL_COMM_H */

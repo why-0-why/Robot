@@ -58,7 +58,7 @@ void IST8310_RST_H(void)
 {
     HAL_GPIO_WritePin(RSTN_IST8310_GPIO_Port, RSTN_IST8310_Pin, GPIO_PIN_SET);
 }
-extern void ist8310_RST_L(void)
+extern void IST8310_RST_L(void)
 {
     HAL_GPIO_WritePin(RSTN_IST8310_GPIO_Port, RSTN_IST8310_Pin, GPIO_PIN_RESET);
 }
@@ -74,27 +74,27 @@ uint8_t IST8310_init(void)
     uint8_t res = 0;
     uint8_t writeNum = 0;
 
-    ist8310_GPIO_init();
-    ist8310_com_init();
+    IST8310_GPIO_init();
+    IST8310_com_init();
 
-    ist8310_RST_L();
-    ist8310_delay_ms(sleepTime);
-    ist8310_RST_H();
-    ist8310_delay_ms(sleepTime);
+    IST8310_RST_L();
+    IST8310_delay_ms(sleepTime);
+    IST8310_RST_H();
+    IST8310_delay_ms(sleepTime);
 
-    res = ist8310_IIC_read_single_reg(IST8310_WHO_AM_I);
+    res = IST8310_IIC_read_single_reg(IST8310_WHO_AM_I);
     if (res != IST8310_WHO_AM_I_VALUE)
     {
         return IST8310_NO_SENSOR;
     }
-    ist8310_delay_ms(wait_time);
+    IST8310_delay_ms(wait_time);
     //set mpu6500 sonsor config and check
     for (writeNum = 0; writeNum < IST8310_WRITE_REG_NUM; writeNum++)
     {
-        ist8310_IIC_write_single_reg(ist8310_write_reg_data_error[writeNum][0], ist8310_write_reg_data_error[writeNum][1]);
-        ist8310_delay_ms(wait_time);
-        res = ist8310_IIC_read_single_reg(ist8310_write_reg_data_error[writeNum][0]);
-        ist8310_delay_ms(wait_time);
+        IST8310_IIC_write_single_reg(ist8310_write_reg_data_error[writeNum][0], ist8310_write_reg_data_error[writeNum][1]);
+        IST8310_delay_ms(wait_time);
+        res = IST8310_IIC_read_single_reg(ist8310_write_reg_data_error[writeNum][0]);
+        IST8310_delay_ms(wait_time);
         if (res != ist8310_write_reg_data_error[writeNum][1])
         {
             return ist8310_write_reg_data_error[writeNum][2];
@@ -129,7 +129,7 @@ void IST8310_read_mag(float mag[3])
 {
     uint8_t buf[6];
     int16_t temp_ist8310_data = 0;
-    ist8310_IIC_read_muli_reg(0x03, buf, 6);
+    IST8310_IIC_read_muli_reg(0x03, buf, 6);
 
     temp_ist8310_data = (int16_t)((buf[1] << 8) | buf[0]);
     mag[0] = MAG_SEN * temp_ist8310_data;

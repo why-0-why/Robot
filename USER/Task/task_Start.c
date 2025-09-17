@@ -1,4 +1,3 @@
-
 #include "task_Start.h"
 
 AppType_e app_type;
@@ -6,13 +5,14 @@ AppType_e app_type;
 void  AppInit(void);
 void StartMusic(void);
 
-void Task_Start(void const *argument)
+void TaskStart(void const *argument)
 {
     AppInit();
     for(;;)
     {
+        osDelay(START_TASK_PERIOD);
 #if INCLUDE_uxTaskGetStackHighWaterMark
-        Task_Start_stack = uxTaskGetStackHighWaterMark(NULL);
+        TaskStart_stack = uxTaskGetStackHighWaterMark(NULL);
 #endif
     }
 }
