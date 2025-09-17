@@ -329,3 +329,59 @@ Comm_RobotInfo_t* RobotInfo_Pointer(void)
 {
     return &robot_info;
 }
+
+/* 私有变量 ------------------------------------------------------------------*/
+uint32_t max_diff_sof_time =1 ;
+uint32_t diff_sof_time = 1;
+uint32_t now_sof_time =1;
+uint32_t vision_offline;
+/* 扩展变量 ------------------------------------------------------------------*/
+Comm_VisionInfo_t vision_info;
+Comm_RobotInfo_t robot_info;
+/* 私有函数原形 --------------------------------------------------------------*/
+
+/* 函数体 --------------------------------------------------------------------*/
+
+void VisionProtocol_ParseHandler(uint16_t cmd_id, uint8_t* data, uint16_t len)
+{
+    switch(cmd_id)
+    {
+        case VISION_DATA_CMD_ID:		//接收视觉自瞄数据
+        {
+            now_sof_time = (float)(micros())/1000.00;
+
+            diff_sof_time = now_sof_time - vision_offline;
+            vision_offline = (float)(micros())/1000.00;
+            if(diff_sof_time>max_diff_sof_time)
+            {
+                max_diff_sof_time = diff_sof_time;
+            }
+            memcpy(&vision_info, data, sizeof(Comm_VisionInfo_t));
+            OfflineHandle_TimeUpdate(OFFLINE_VISION_INFO);
+        }break;
+        case ROBOT_DATA_CMD_ID:
+        {
+            memcpy(&robot_info, data, sizeof(Comm_RobotInfo_t));
+        }break;
+    }
+}
+
+
+int TwoBytesToInt (uint8_t byte[2])
+{
+    unsigned int data = ((byte[1]<<8) | (byte[0]<<0));
+
+    int result = *(int*)(&data);
+
+    return result;
+}
+
+float FourBytesToFloat (uint8_t byte[4])
+{
+    unsigned int data = ((byte[3]<<24) | (byte[2]<<16) | (byte[1]<<8) | (byte[0]<<0));
+
+    float current_mA = *(float*)(&data);
+
+    return current_mA;
+
+}

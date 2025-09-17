@@ -48,14 +48,14 @@
 /* USER CODE BEGIN Variables */
 
 /* USER CODE END Variables */
-osThreadId Task_StartHandle;
+osThreadId taskStartHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
 
 /* USER CODE END FunctionPrototypes */
 
-void StartDefaultTask(void const * argument);
+void TaskStart(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -102,9 +102,9 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
-  /* definition and creation of Task_Start */
-  osThreadDef(Task_Start, StartDefaultTask, osPriorityNormal, 0, 128);
-  Task_StartHandle = osThreadCreate(osThread(Task_Start), NULL);
+  /* definition and creation of taskStart */
+  osThreadDef(taskStart, TaskStart, osPriorityNormal, 0, 128);
+  taskStartHandle = osThreadCreate(osThread(taskStart), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -112,23 +112,23 @@ void MX_FREERTOS_Init(void) {
 
 }
 
-/* USER CODE BEGIN Header_StartDefaultTask */
+/* USER CODE BEGIN Header_TaskStart */
 /**
-  * @brief  Function implementing the TestTask thread.
+  * @brief  Function implementing the taskStart thread.
   * @param  argument: Not used
   * @retval None
   */
-/* USER CODE END Header_StartDefaultTask */
-__weak void StartDefaultTask(void const * argument)
+/* USER CODE END Header_TaskStart */
+__weak void TaskStart(void const * argument)
 {
 
-  /* USER CODE BEGIN StartDefaultTask */
+  /* USER CODE BEGIN TaskStart */
   /* Infinite loop */
   for(;;)
   {
     osDelay(1);
   }
-  /* USER CODE END StartDefaultTask */
+  /* USER CODE END TaskStart */
 }
 
 /* Private application code --------------------------------------------------*/

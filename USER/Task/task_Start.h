@@ -15,9 +15,11 @@
 #include "task_SoftwareTimer_Check.h"
 #include "task_IMU_Update.h"
 #include "task_Chassis_ctrl.h"
+#include "task_Gimbal_ctrl.h"
 #include "task_Console.h"
 #include "task_Communicate.h"
 #include "task_Detect.h"
+
 
 #define START_TASK_PERIOD           100
 

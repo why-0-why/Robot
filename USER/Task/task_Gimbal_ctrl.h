@@ -5,6 +5,7 @@
 #include "mdl_Gimbal.h"
 #include <user_lib.h>
 #include "robot_info.h"
+#include "mdl_comm.h"
 
 #define GIMBAL_CTRL_TASK_PERIOD          1
 #define GIMBAL_UPLOAD_TIMER_PERIOD  20

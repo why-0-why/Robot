@@ -51,6 +51,7 @@ typedef unsigned short int uint16_t;
 typedef unsigned int       uint32_t;
 #else
 #include <stdint.h>
+#include "cmsis_gcc.h"
 #endif
 
 //******************************************************************************************
