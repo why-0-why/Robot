@@ -1,5 +1,5 @@
 #include "dvc_buzzer.h"
-
+#include "drv_timer.h"
 /* 私有变量 ------------------------------------------------------------------*/
 static uint8_t beep_times;
 static uint16_t beep_on_time = BEEP_ON_TIME;

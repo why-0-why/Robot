@@ -18,6 +18,7 @@ set(MX_Include_Dirs
     ${CMAKE_SOURCE_DIR}/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F
     ${CMAKE_SOURCE_DIR}/Drivers/CMSIS/Device/ST/STM32F4xx/Include
     ${CMAKE_SOURCE_DIR}/Drivers/CMSIS/Include
+    ${CMAKE_SOURCE_DIR}/Middlewares/ST/ARM/DSP/Inc
 )
 
 # STM32CubeMX generated application sources
@@ -82,9 +83,11 @@ set(FreeRTOS_Src
 # Link directories setup
 set(MX_LINK_DIRS
 
+    ${CMAKE_SOURCE_DIR}/Middlewares/ST/ARM/DSP/Lib
 )
 # Project static libraries
-set(MX_LINK_LIBS 
+set(MX_LINK_LIBS  
+	:libarm_cortexM4lf_math.a
     STM32_Drivers
     FreeRTOS	
 )

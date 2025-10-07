@@ -6,11 +6,7 @@
 #define DVC_SUPERCAPACITY_H
 
 /* 包含头文件 ----------------------------------------------------------------*/
-#include "stdint.h"
 #include "drv_can.h"
-#include "mdl_Chassis.h"
-#include "dvc_Referee_system.h"
-// #include "chassis_app.h"
 /* 类型定义 ------------------------------------------------------------------*/
 typedef struct {
     float in_v;       

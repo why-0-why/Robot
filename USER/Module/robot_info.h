@@ -82,6 +82,14 @@
 #define GIMBAL_CHASSIS_DATA_FIFO_SIZE   (1024u)
 #define REFEREE_DATA_STD_ID             (0x700)
 
-
-
+// 任务周期
+#define CONSOLE_TASK_PERIOD         20
+#define START_TASK_PERIOD           100
+#define SHOOT_TASK_PERIOD           1
+#define IMU_UPDATE_TASK_PERIOD             5
+#define GIMBAL_CTRL_TASK_PERIOD          1
+#define GIMBAL_UPLOAD_TIMER_PERIOD  20
+#define DETECT_TASK_PERIOD          20
+#define COMMUNICATE_TASK_PERIOD            1
+#define CHASSIS_CTRL_TASK_PERIOD         10
 #endif //ROBOT_INFO_H

@@ -1,7 +1,9 @@
 
 #include "task_Chassis_ctrl.h"
-
-
+#include "mdl_Chassis.h"
+#include "cmsis_os.h"
+#include "dvc_Supercapacity.h"
+#include "robot_info.h"
 /* 任务 */
 osThreadId ChassisTaskHandle;
 #if INCLUDE_uxTaskGetStackHighWaterMark

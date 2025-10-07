@@ -3,7 +3,7 @@
 #define DVC_BUZZER_H
 
 #include "drv_gpio.h"
-#include "drv_timer.h"
+
 /* 类型定义 ------------------------------------------------------------------*/
 enum
 {

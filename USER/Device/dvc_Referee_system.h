@@ -1,12 +1,10 @@
 //
 // Created by Administrator on 25-8-5.
 //
-
+// TODO:考虑裁判系统层级
 #ifndef DVC_REFEREE_SYSTEM_H
 #define DVC_REFEREE_SYSTEM_H
 /* 包含头文件 ----------------------------------------------------------------*/
-#include "stm32f4xx_hal.h"
-#include "arm_math.h" // 引入数学库
 #include "drv_uart.h"
 /* 类型定义 ------------------------------------------------------------------*/
 /*

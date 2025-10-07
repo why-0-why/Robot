@@ -1,11 +1,12 @@
 
 #include "mdl_Console.h"
-
-extern Console_t console;
-extern ramp_v0_t front_back_ramp = RAMP_GEN_DAFAULT;
-extern ramp_v0_t left_right_ramp = RAMP_GEN_DAFAULT;
-extern ramp_v0_t shift_front_ramp = RAMP_GEN_DAFAULT;
-extern ramp_v0_t shift_left_ramp = RAMP_GEN_DAFAULT;
+#include "mdl_comm.h"
+#include "robot_info.h"
+Console_t console;
+ramp_v0_t front_back_ramp = RAMP_GEN_DAFAULT;
+ramp_v0_t left_right_ramp = RAMP_GEN_DAFAULT;
+ramp_v0_t shift_front_ramp = RAMP_GEN_DAFAULT;
+ramp_v0_t shift_left_ramp = RAMP_GEN_DAFAULT;
 
 static float beta = 1;//不同等级对应的速度增益系数
 uint16_t vision_flag;
@@ -293,7 +294,7 @@ void movement_keyboard(void)
 	float gimbal_vx  = 0;
     float gimbal_vy  = 0;
 	/********************************移动模式************************************/			
-	ramp_v0_init(&shift_front_ramp,CHASSIS_SHIFT_ACCEL_TIME/CONSOLE_TASK_PERIOD);       //斜坡初始化
+	ramp_v0_init(&shift_front_ramp,CHASSIS_SHIFT_ACCEL_TIME/CONSOLE_TASK_PERIOD);        //斜坡初始化
 	ramp_v0_init(&shift_left_ramp,CHASSIS_SHIFT_ACCEL_TIME/CONSOLE_TASK_PERIOD);
 	
 //			if(RefereeSystem_RobotState_Pointer()->chassis_power_limit<=55)

@@ -2,8 +2,7 @@
 #define DRV_CAN_H
 
 /* 包含头文件 ----------------------------------------------------------------*/
-#include "main.h"
-#include "drv_def.h"
+#include "def.h"
 #include "can.h"
 #include "fifo.h"
 

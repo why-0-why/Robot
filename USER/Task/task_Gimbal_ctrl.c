@@ -1,5 +1,17 @@
 #include "task_Gimbal_ctrl.h"
+#include "cmsis_os.h"
 
+#include "alg_crc.h"//CRC校验函数
+#include "alg_AHRS.h"//转换单位函数
+
+#include "drv_timer.h"// 获取时间函数
+
+#include "dvc_Referee_system.h"// 裁判系统函数
+#include "task_Detect.h"// 离线检测函数
+#include "task_SoftwareTimer_Check.h"//
+#include <user_lib.h>//数学函数
+#include "robot_info.h"//机器人参数
+#include "mdl_comm.h"//通讯数据类型函数
 
 GimbalHandle_t gimbal_handle;
 

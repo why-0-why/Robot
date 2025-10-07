@@ -59,6 +59,8 @@ BSP_Status_e BSP_GPIO_NewObject(GPIO_Object_t* obj, GPIO_Device_e dev, GPIO_Type
     if(obj == NULL)
         return BSP_ERROR;
 
+    /*如果表达式为真（参数有效）：(void)0U（无操作，程序继续执行）=
+    如果表达式为假（参数无效）：调用 assert_failed((uint8_t *)__FILE__, __LINE__)*/
     assert_param(obj->device == GPIO_INPUT_DEV
             || obj->device == GPIO_OUTPUT_OD_DEV
             || obj->device == GPIO_OUTPUT_PP_DEV);

@@ -1,12 +1,14 @@
 
+#include "alg_AHRS.h"
+#include "alg_ESO.h"
+#include "alg_ramp.h"
+
 #include "mdl_Gimbal.h"
 #include "task_Gimbal_ctrl.h"
+#include "task_Detect.h"
 
-
-
-
-
-
+#include "robot_info.h"
+#include "user_lib.h"// 一些数学函数
 
 ramp_v0_t yaw_ramp = RAMP_GEN_DAFAULT;
 ramp_v0_t pitch_ramp = RAMP_GEN_DAFAULT;

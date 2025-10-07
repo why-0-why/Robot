@@ -1,9 +1,10 @@
 /* 包含头文件 ----------------------------------------------------------------*/
 #include "task_Detect.h"
 #include "cmsis_os.h"
-#include "dvc_buzzer.h"
-#include "dvc_led.h"
-#include "drv_timer.h"
+#include "dvc_buzzer.h"// 蜂鸣器函数
+#include "dvc_led.h"// led函数
+#include "drv_timer.h"// 定时器
+#include "robot_info.h"
 /* 私有类型定义 --------------------------------------------------------------*/
 
 /* 私有宏定义 ----------------------------------------------------------------*/
@@ -19,8 +20,7 @@ OfflineHandle_t offline_handle[OFFLINE_EVENT_MAX_NUM] = {NO_OFFLINE};
 /* 扩展变量 ------------------------------------------------------------------*/
 
 /* 私有函数原形 --------------------------------------------------------------*/
-void BeepHandler(void);
-void BeepTimesSet(uint8_t times);
+
 
 /* 函数体 --------------------------------------------------------------------*/
 void DetectTask(void const *argument)

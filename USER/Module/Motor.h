@@ -15,9 +15,9 @@
 #include "drv_can.h"
 #include "../Device/dvc_DJmotor.h"
 #include "../Device/dvc_DMmotor.h"
-#include "stm32f4xx_hal.h"
-#include "arm_math.h"
-#include "alg_pid.h"
+
+
+
 /* 类型定义 ------------------------------------------------------------------*/
 
 

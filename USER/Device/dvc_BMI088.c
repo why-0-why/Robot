@@ -4,6 +4,7 @@
 #include "dvc_BMI088.h"
 #include "cmsis_os.h"
 #include "../Component/Driver/drv_timer.h"
+// TODO:两种延时（ms/us）使用函数不统一
 extern SPI_HandleTypeDef hspi1;
 
 

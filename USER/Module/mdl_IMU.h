@@ -5,12 +5,8 @@
 #ifndef MDL_IMU_H
 #define MDL_IMU_H
 
-/* 包含头文件 ----------------------------------------------------------------*/
-#include "dvc_BMI088.h"
-#include "dvc_IST8310.h"
-#include "alg_AHRS.h"
-#include "cmsis_os.h"
-#include "drv_timer.h"
+
+
 
 /* 类型定义 ------------------------------------------------------------------*/
 typedef struct

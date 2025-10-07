@@ -7,6 +7,7 @@
     <option name="/Default/Environment/Hierarchy/GeneratedFilesCacheKey/Timestamp/@EntryValue" value="3" type="long" />
     <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
     <option name="/Default/Housekeeping/GlobalSettingsUpgraded/IsUpgraded/@EntryValue" value="true" type="bool" />
+    <option name="/Default/Housekeeping/OptionsDialog/SelectedPageId/@EntryValue" value="CppIncludesOrderOptions" type="string" />
     <option name="/Default/RiderDebugger/RiderRestoreDecompile/RestoreDecompileSetting/@EntryValue" value="false" type="bool" />
   </component>
   <component name="CMakePresetLoader">{
@@ -40,28 +41,66 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c589dc13-3de4-4a01-a223-94669579d14a" name="更改" comment="完善底盘任务以及初始化">
+      <change afterPath="$PROJECT_DIR$/USER/Component/Algorithm/AHRS.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/USER/Component/Algorithm/arm_cortexM4lf_math.lib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/USER/Component/Algorithm/libarm_cortexM4lf_math.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mxproject" beforeDir="false" afterPath="$PROJECT_DIR$/.mxproject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inc/FreeRTOSConfig.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/FreeRTOSConfig.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inc/stm32f4xx_hal_conf.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/stm32f4xx_hal_conf.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inc/stm32f4xx_it.h" beforeDir="false" afterPath="$PROJECT_DIR$/Inc/stm32f4xx_it.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/New_FrameWork_Test.ioc" beforeDir="false" afterPath="$PROJECT_DIR$/New_FrameWork_Test.ioc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/freertos.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/freertos.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/stm32f4xx_hal_timebase_tim.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/stm32f4xx_hal_timebase_tim.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/stm32f4xx_it.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/stm32f4xx_it.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/USER/Device/dvc_IST8310.c" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Device/dvc_IST8310.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/USER/Device/dvc_soft_timer.h" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Device/dvc_soft_timer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Component/Algorithm/alg_AHRS.c" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Component/Algorithm/alg_AHRS.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Component/Algorithm/alg_AHRS.h" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Component/Algorithm/alg_AHRS.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Component/Algorithm/alg_pid_zkd.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Component/Algorithm/alg_pid_zkd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Component/Algorithm/alg_pid_zkd_capi.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Component/Algorithm/drv_math.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Component/Algorithm/drv_math.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Component/Driver/drv_can.h" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Component/Driver/drv_can.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Component/Driver/drv_def.h" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Component/Driver/def.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Component/Driver/drv_gpio.c" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Component/Driver/drv_gpio.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Component/Driver/drv_gpio.h" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Component/Driver/drv_gpio.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Component/Driver/drv_i2c.h" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Component/Driver/drv_i2c.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Component/Driver/drv_timer.h" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Component/Driver/drv_timer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Component/Driver/drv_uart.c" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Component/Driver/drv_uart.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Component/Driver/drv_uart.h" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Component/Driver/drv_uart.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Device/dvc_BMI088.c" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Device/dvc_BMI088.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Device/dvc_DMmotor.c" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Device/dvc_DMmotor.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Device/dvc_DMmotor.h" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Device/dvc_DMmotor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Device/dvc_Referee_system.h" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Device/dvc_Referee_system.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Device/dvc_Supercapacity.c" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Device/dvc_Supercapacity.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Device/dvc_Supercapacity.h" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Device/dvc_Supercapacity.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Device/dvc_buzzer.c" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Device/dvc_buzzer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Device/dvc_buzzer.h" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Device/dvc_buzzer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Device/dvc_dt7.c" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Device/dvc_dt7.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Device/dvc_dt7.h" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Device/dvc_dt7.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Module/Motor.h" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Module/Motor.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/USER/Module/mdl_Chassis.c" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Module/mdl_Chassis.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/USER/Module/mdl_Chassis.h" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Module/mdl_Chassis.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Module/mdl_Console.c" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Module/mdl_Console.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Module/mdl_Console.h" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Module/mdl_Console.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Module/mdl_Gimbal.c" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Module/mdl_Gimbal.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Module/mdl_Gimbal.h" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Module/mdl_Gimbal.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Module/mdl_IMU.c" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Module/mdl_IMU.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Module/mdl_IMU.h" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Module/mdl_IMU.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/USER/Module/mdl_comm.c" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Module/mdl_comm.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/USER/Module/mdl_comm.h" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Module/mdl_comm.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Module/robot_info.h" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Module/robot_info.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Task/task_Chassis_ctrl.c" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Task/task_Chassis_ctrl.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Task/task_Chassis_ctrl.h" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Task/task_Chassis_ctrl.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Task/task_Communicate.c" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Task/task_Communicate.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Task/task_Communicate.h" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Task/task_Communicate.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Task/task_Console.c" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Task/task_Console.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Task/task_Console.h" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Task/task_Console.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Task/task_Detect.c" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Task/task_Detect.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Task/task_Detect.h" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Task/task_Detect.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/USER/Task/task_Gimbal_ctrl.c" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Task/task_Gimbal_ctrl.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/USER/Task/task_Gimbal_ctrl.h" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Task/task_Gimbal_ctrl.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Task/task_IMU_Update.c" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Task/task_IMU_Update.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Task/task_IMU_Update.h" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Task/task_IMU_Update.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Task/task_Shoot.c" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Task/task_Shoot.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Task/task_Shoot.h" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Task/task_Shoot.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Task/task_SoftwareTimer_Check.c" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Task/task_SoftwareTimer_Check.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USER/Task/task_SoftwareTimer_Check.h" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Task/task_SoftwareTimer_Check.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/USER/Task/task_Start.c" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Task/task_Start.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/USER/Task/task_Start.h" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Task/task_Start.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/USER/Tool/STM32F4_dap.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/USER/Tool/STM32F4_dap.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake/stm32cubemx/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake/stm32cubemx/CMakeLists.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,15 +114,24 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;why-0-why&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/why-0-why/Robot.git&quot;,
+    &quot;accountId&quot;: &quot;b7fe1518-446c-4fed-be92-d82027c5d95f&quot;
+  }
+}</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/USER/Device/dvc_Supercapacity.c" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/USER/Device/dvc_Supercapacity.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/USER/Device/dvc_dt7.c" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/USER/Device/dvc_dt7.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/USER/Module/mdl_Chassis.c" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/USER/Task/task_Console.c" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/USER/Task/task_Console.h" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -110,6 +158,7 @@
     &quot;OpenOCD 下载并运行.New_FrameWork_Test.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.RadMigrateCodeStyle&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
@@ -117,22 +166,34 @@
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/embed/github/clone/Robot/New_FrameWork_Test/USER/Module&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Documents/100Cache_repository/STM32F4Project/Robot/USER/Component/Algorithm&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.cidr.embedded.config&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.folding&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;,
+      &quot;module&quot;,
+      &quot;repository&quot;
+    ]
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\100Cache_repository\STM32F4Project\Robot\USER\Component\Algorithm" />
       <recent name="D:\embed\github\clone\Robot\New_FrameWork_Test\USER\Module" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\100Cache_repository\STM32F4Project\Robot\USER\Component\Algorithm" />
+    </key>
   </component>
-  <component name="RunManager" selected="OpenOCD 下载并运行.New_FrameWork_Test">
+  <component name="RunManager" selected="CMake 应用程序.New_FrameWork_Test">
     <configuration name="FreeRTOS" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="New_FrameWork_Test" TARGET_NAME="FreeRTOS" CONFIG_NAME="Debug-STM32">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -157,12 +218,13 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="CMake 应用程序.New_FrameWork_Test" />
       <item itemvalue="CMake 应用程序.FreeRTOS" />
+      <item itemvalue="CMake 应用程序.New_FrameWork_Test" />
       <item itemvalue="CMake 应用程序.STM32_Drivers" />
       <item itemvalue="OpenOCD 下载并运行.New_FrameWork_Test" />
     </list>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
       <changelist id="c589dc13-3de4-4a01-a223-94669579d14a" name="更改" comment="完善buzzer设备" />
@@ -185,6 +247,13 @@
       <workItem from="1758018590556" duration="57000" />
       <workItem from="1758019683893" duration="7340000" />
       <workItem from="1758090415590" duration="1612000" />
+      <workItem from="1758885022961" duration="1230000" />
+      <workItem from="1758956098687" duration="18429000" />
+      <workItem from="1759021051731" duration="3478000" />
+      <workItem from="1759818783211" duration="5369000" />
+      <workItem from="1759824202818" duration="1012000" />
+      <workItem from="1759825249494" duration="5786000" />
+      <workItem from="1759833884331" duration="2000" />
     </task>
     <task id="LOCAL-00001" summary="新增超电设备,底盘和控制台的一些结构体定义，新增裁判系统，新增adrc算法，将原本旧项目bsp——init中的can初始化合并至本项目的drv_can中">
       <option name="closed" value="true" />
@@ -210,7 +279,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758018619533</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="链接库完成">
+      <option name="closed" value="true" />
+      <created>1759826994327</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1759826994327</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,44 +298,26 @@
     <isAutomaticFoundErrors value="true" />
     <isAutomaticReloadCMake value="true" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="新增超电设备,底盘和控制台的一些结构体定义，新增裁判系统，新增adrc算法，将原本旧项目bsp——init中的can初始化合并至本项目的drv_can中" />
     <MESSAGE value="新增crc校验算法，linux内核链表（算法层，用于通讯），新增通讯模组，以及完成通讯任务" />
     <MESSAGE value="完善底盘任务以及初始化" />
-    <option name="LAST_COMMIT_MESSAGE" value="完善底盘任务以及初始化" />
+    <MESSAGE value="链接库完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="链接库完成" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/USER/Device/dvc_Referee_system.c</url>
-          <line>1</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/USER/Task/task_Communicate.c</url>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/USER/Task/task_Gimbal_ctrl.h</url>
-          <line>3</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/USER/Module/mdl_Gimbal.c</url>
-          <line>1</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/USER/Device/dvc_soft_timer.h</url>
-          <line>48</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/USER/Module/mdl_Chassis.c</url>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

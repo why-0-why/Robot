@@ -1,10 +1,10 @@
 /* 包含头文件 ----------------------------------------------------------------*/
 #include "task_IMU_Update.h"
 #include "cmsis_os.h"
-#include "mdl_IMU.h"
-#include "dvc_heater.h"
-#include "alg_pid.h"
-
+#include "mdl_IMU.h"//IMU数据类型和函数
+#include "dvc_heater.h"//heater数据类型和函数
+#include "alg_pid.h"//pid数据类型和函数
+#include "robot_info.h"
 /* 私有类型定义 --------------------------------------------------------------*/
 
 /* 私有宏定义 ----------------------------------------------------------------*/
@@ -87,7 +87,7 @@ static void IMU_TempControl(float temp)
             imu_temp_pid.out = 0.0f;
         }
         pwm = (uint16_t)imu_temp_pid.out;
-        BSP_GPIO_SetPwmValue(&temp_pwm_gpio, pwm);
+        BSP_GPIO_SetPwmValue(&temp_pwm_gpio, pwm);// TODO：heater对象化后没替换
     }
     else
     {

@@ -1,6 +1,6 @@
 
 #include "dvc_dt7.h"
-
+#include <math.h>// TODO:armmath库和math库考虑同一用一个
 
 #define DBUS_RX_BUFFER_SIZE (30)
 

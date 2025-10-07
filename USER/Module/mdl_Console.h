@@ -169,6 +169,12 @@ extern RC_Info_t last_rc;
 extern RC_Switch_t wheel_switch;
 extern RC_Switch_t rc_switch2;
 
+extern Console_t console;
+extern ramp_v0_t front_back_ramp;
+extern ramp_v0_t left_right_ramp;
+extern ramp_v0_t shift_front_ramp;
+extern ramp_v0_t shift_left_ramp;
+
 void RemoteControlWheelAction(void);
 void Other_Operation(void);
 void RemoteControl_Operation(void);

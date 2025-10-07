@@ -1,11 +1,19 @@
 #include "mdl_Chassis.h"
-#include "mdl_comm.h"
-#include "stm32f407xx.h"
-#include "cmsis_os.h"
-#include "arm_math.h"
+#include "task_SoftwareTimer_Check.h"//软时钟，检查
+#include "task_Detect.h"
+#include "robot_info.h"// TODO:机器人参数
+
+// 算法
+#include "user_lib.h"// TODO: math库一部分
+#include "alg_ADRC.h"// TODO:是否有用到未知
 
 
+// 设备
+#include "dvc_Referee_system.h"// 裁判系统函数
+#include "dvc_Supercapacity.h"// 超电函数
+#include "Motor.h"// TODO: 电机定义，需拆分
 
+// 模组
 
 ChassisHandle_t chassis_handle;
 
@@ -154,8 +162,11 @@ void Chassis_MoveTransform(ChassisHandle_t* chassis_handle, float* chassis_vx, f
 {
     static float sin_yaw = 0.0f, cos_yaw = 0.0f;
 
-    sin_yaw = arm_sin_f32(chassis_handle->gimbal_yaw_ecd_angle / RADIAN_COEF);
-    cos_yaw = arm_cos_f32(chassis_handle->gimbal_yaw_ecd_angle / RADIAN_COEF);
+    // sin_yaw = arm_sin_f32(chassis_handle->gimbal_yaw_ecd_angle / RADIAN_COEF);
+    // cos_yaw = arm_cos_f32(chassis_handle->gimbal_yaw_ecd_angle / RADIAN_COEF);
+    sin_yaw = sin(chassis_handle->gimbal_yaw_ecd_angle / RADIAN_COEF);
+    cos_yaw = cos(chassis_handle->gimbal_yaw_ecd_angle / RADIAN_COEF);
+//TODO: armmath库链接错误
 
     *chassis_vx = cos_yaw * chassis_handle->vx + sin_yaw * chassis_handle->vy;
     *chassis_vy =-sin_yaw * chassis_handle->vx + cos_yaw * chassis_handle->vy;
@@ -472,4 +483,11 @@ void ChassisAppConfig(void)
     BSP_UART_SetRxCallback(&com2_obj, COM2_ReceiveCallback);
     BSP_CAN_SetRxCallback(&can1_obj, CAN1_ReceiveCallback);
     BSP_CAN_SetRxCallback(&can2_obj, CAN2_ReceiveCallback);
+}
+
+void ChassisIslandMode(void)
+{
+    chassis_handle.vx = 1000; //!!!!
+    chassis_handle.vy = 0;
+    chassis_handle.vw = 0;
 }

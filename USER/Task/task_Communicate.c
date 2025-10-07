@@ -1,7 +1,8 @@
-#include "task_Communicate.h"
-
 /* 包含头文件 ----------------------------------------------------------------*/
 #include "task_Communicate.h"
+#include "cmsis_os.h"
+#include "mdl_comm.h"
+#include "robot_info.h"
 
 /* 私有类型定义 --------------------------------------------------------------*/
 

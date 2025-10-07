@@ -122,6 +122,9 @@ void MX_FREERTOS_Init(void) {
 __weak void TaskStart(void const * argument)
 {
 
+  // /* init code for Library */
+  // MX_Library_Init();
+
   /* USER CODE BEGIN TaskStart */
   /* Infinite loop */
   for(;;)

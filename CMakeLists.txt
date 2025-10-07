@@ -12,9 +12,6 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS ON)
 
-# Add Preprocessor Macro Definitions
-add_definitions(-DARM_MATH_CM4)
-
 # Define the build type
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE "Debug")
@@ -38,9 +35,7 @@ enable_language(C ASM)
 
 # Create an executable object type
 add_executable(${CMAKE_PROJECT_NAME}
-        USER/Component/Algorithm/alg_ESO.c
-        USER/Component/Algorithm/alg_ESO.h
-
+    # USER/Component/Algorithm/AHRS.lib
 )
 
 # Add STM32CubeMX generated sources
@@ -55,9 +50,7 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
-        USER/Component/Algorithm/alg_pid_zkd.cpp
-        USER/Component/Algorithm/drv_math.cpp
-        USER/Component/Algorithm/alg_pid_zkd_capi.cpp
+        USER/Component/Algorithm/alg_ESO.c
         USER/Component/Algorithm/alg_AHRS.c
         USER/Component/Algorithm/alg_pid.c
         USER/Component/Algorithm/alg_ADRC.c
@@ -90,6 +83,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
         USER/Module/motor.c
         USER/Module/mdl_IMU.c
         USER/Module/mdl_comm.c
+        USER/Module/mdl_Console.c
 
         USER/Task/task_Shoot.c
         USER/Task/task_Communicate.c
@@ -108,19 +102,22 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
         USER/Component/Algorithm
-        USER/Device
         USER/Component/Driver
-        USER/Task
+        USER/Device
         USER/Module
+        USER/Task
 )
 
 # Add project symbols (macros)
 target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined symbols
+        ARM_MATH_CM4
 )
 
 # Add linked libraries
 target_link_libraries(${CMAKE_PROJECT_NAME}
     stm32cubemx
-    # Add user defined libraries
+        ${CMAKE_CURRENT_SOURCE_DIR}/USER/Component/Algorithm/AHRS.lib
+        ${CMAKE_CURRENT_SOURCE_DIR}/Middlewares/ST/ARM/DSP/Lib/libarm_cortexM4lf_math.a # 参考教程加的库
+        # Add user defined libraries
 )

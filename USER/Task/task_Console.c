@@ -1,20 +1,29 @@
 
+#include "robot_info.h"
+#include "cmsis_os.h"
+
+//#include "alg_ramp.h"
+
+#include "drv_timer.h"//定时器函数
+
+#include "mdl_comm.h"//云台通讯数据
+#include "mdl_Console.h"//控制台的数据类型和函数
 
 #include "task_Console.h"
+#include "task_Detect.h"//离线检测的数据类型和函数
+#include "robot_info.h"
 
 
-
-Console_t console;
 RC_Info_t last_rc;
 RC_Switch_t wheel_switch;
 RC_Switch_t rc_switch2;
 
 uint16_t init_stime,init_etime,l_stime,l_etime;
 
-ramp_v0_t front_back_ramp = RAMP_GEN_DAFAULT;
-ramp_v0_t left_right_ramp = RAMP_GEN_DAFAULT;
-ramp_v0_t shift_front_ramp = RAMP_GEN_DAFAULT;
-ramp_v0_t shift_left_ramp = RAMP_GEN_DAFAULT;
+// ramp_v0_t front_back_ramp = RAMP_GEN_DAFAULT;
+// ramp_v0_t left_right_ramp = RAMP_GEN_DAFAULT;
+// ramp_v0_t shift_front_ramp = RAMP_GEN_DAFAULT;
+// ramp_v0_t shift_left_ramp = RAMP_GEN_DAFAULT;
 
 uint32_t time_ms;
 uint32_t time_last;

@@ -2,8 +2,7 @@
 #define DRV_GPIO_H
 
 /* 包含头文件 ----------------------------------------------------------------*/
-#include "main.h"
-#include "drv_def.h"
+#include "def.h"
 #include "gpio.h"
 #ifdef HAL_TIM_MODULE_ENABLED
 #include "tim.h"
